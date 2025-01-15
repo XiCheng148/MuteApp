@@ -2,9 +2,9 @@
 
 ; 创建托盘菜单
 Menu, Tray, NoStandard
-Menu, Tray, Add, 修改快捷键, ChangeHotkey
+Menu, Tray, Add, Change Hotkey, ChangeHotkey
 Menu, Tray, Add
-Menu, Tray, Add, 退出, ExitApp
+Menu, Tray, Add, Exit, ExitApp
 
 ; 默认快捷键
 currentHotkey := "^!+a"
@@ -20,9 +20,9 @@ ChangeHotkey:
   Hotkey, %currentHotkey%, Off
   
   ; 显示输入框
-  InputBox, newHotkey, 修改快捷键, 快捷键格式说明：`n^ = Ctrl`n! = Alt`n+ = Shift`n# = Windows 键`n`n示例：`n^!+a = Ctrl+Alt+Shift+A`n^!a = Ctrl+Alt+A`n#a = Windows+A`n`n请输入新的快捷键组合：,,,,,,,, %currentHotkey%
+  InputBox, newHotkey, Change Hotkey, Tip：`n^ = Ctrl`n! = Alt`n+ = Shift`n# = Windows Key`n`n：`n^!+a = Ctrl+Alt+Shift+A`n^!a = Ctrl+Alt+A`n#a = Windows+A`n`nInput new hotkey：,,,,,,,, %currentHotkey%
   
-  if !ErrorLevel  ; 用户点击了确定
+  if !ErrorLevel 
   {
     ; 注册新热键
     Hotkey, %newHotkey%, MuteToggle
