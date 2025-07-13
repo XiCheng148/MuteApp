@@ -25,8 +25,7 @@ jobs:
         $releaseName = "MuteApp-$tag"
         New-Item -ItemType Directory -Path "$releaseName/MuteApp" -Force
         Copy-Item "muteApp.exe" -Destination "$releaseName/MuteApp"
-        Copy-Item "nircmd.exe" -Destination "$releaseName/MuteApp"
-        Copy-Item "nircmdc.exe" -Destination "$releaseName/MuteApp"
+        Copy-Item "SoundVolumeView.exe" -Destination "$releaseName/MuteApp"
         Compress-Archive -Path "$releaseName" -DestinationPath "$releaseName.zip"
       shell: pwsh
     
